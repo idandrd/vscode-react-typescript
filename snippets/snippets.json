@@ -2,13 +2,13 @@
 	"React Component": {
 		"prefix": "tsrcc",
 		"body": [
-			"import * as React from 'react';",
+			"import * as React from \"react\";",
 			"",
-			"export interface ${1:IApp}Props {",
+			"export interface I${1:App}Props {",
 			"}",
 			"",
-			"export default class ${1:} extends React.Component<${1:}Props, any> {",
-			"  public render() {",
+			"export class ${1:} extends React.Component<I${1:}Props, any> {",
+			"  render() {",
 			"    return (",
 			"      <div>",
 			"        ${2:}",
@@ -23,23 +23,23 @@
 	"React Component - Full": {
 		"prefix": "tsrcfull",
 		"body": [
-			"import * as React from 'react';",
+			"import * as React from \"react\";",
 			"",
-			"export interface ${1:IApp}Props {",
+			"export interface I${1:App}Props {",
 			"}",
 			"",
-			"export interface ${1:IApp}State {",
+			"export interface I${1:App}State {",
 			"}",
 			"",
-			"export default class ${1:} extends React.Component<${1:}Props, ${1:}State> {",
-			"  constructor(props: ${1:}Props) {",
+			"export class ${1:} extends React.Component<I${1:}Props, I${1:}State> {",
+			"  constructor(props: I${1:}Props) {",
 			"    super(props);",
 			"",
 			"    this.state = {",
 			"    }",
 			"  }",
 			"",
-			"  public render() {",
+			"  render() {",
 			"    return (",
 			"      <div>",
 			"        ${2:}",
@@ -54,11 +54,11 @@
 	"React Component without import and export": {
 		"prefix": "tsrcjc",
 		"body": [
-			"export interface ${1:IApp}Props {",
+			"interface I${1:App}Props {",
 			"}",
 			"",
-			"class ${1:} extends React.Component<${1:}Props, any> {",
-			"  public render() {",
+			"class ${1:} extends React.Component<I${1:}Props, any> {",
+			"  render() {",
 			"    return (",
 			"      <div>",
 			"        ${2:}",
@@ -73,12 +73,12 @@
 	"React PureComponent": {
 		"prefix": "tsrpcc",
 		"body": [
-			"import * as React from 'react';",
+			"import * as React from \"react\";",
 			"",
-			"export interface ${1:IApp}Props {",
+			"export interface I${1:App}Props {",
 			"}",
 			"",
-			"export default class ${1:} extends React.PureComponent<${1:}Props, any> {",
+			"export class ${1:} extends React.PureComponent<I${1:}Props, any> {",
 			"  public render() {",
 			"    return (",
 			"      <div>",
@@ -94,10 +94,10 @@
 	"React PureComponent without import and export": {
 		"prefix": "tsrpcjc",
 		"body": [
-			"export interface ${1:IApp}Props {",
+			"interface I${1:App}Props {",
 			"}",
 			"",
-			"class ${1:} extends React.PureComponent<${1:}Props, any> {",
+			"class ${1:} extends React.PureComponent<I${1:}Props, any> {",
 			"  public render() {",
 			"    return (",
 			"      <div>",
@@ -113,17 +113,17 @@
 	"React Pure Function Component": {
 		"prefix": "tsrpfc",
 		"body": [
-			"import * as React from 'react';",
+			"import * as React from \"react\";",
 			"",
-			"export interface ${1:IApp}Props {",
+			"export interface I${1:App}Props {",
 			"}",
 			"",
-			"export function ${1:} (props: ${1:}Props) {",
-			"    return (",
-			"      <div>",
-			"        ${0}",
-			"      </div>",
-			"    );",
+			"export function ${1:} (props: I${1:}Props) {",
+			"  return (",
+			"    <div>",
+			"      ${2:}",
+			"    </div>",
+			"  );",
 			"}",
 			""
 		],
@@ -132,16 +132,20 @@
 	"React Stateless Functional Component": {
 		"prefix": "tsrsfc",
 		"body": [
-			"import * as React from 'react';",
+			"import * as React from \"react\";",
 			"",
-			"interface ${1:IApp}Props {$2",
+			"interface I${1:App}Props {",
+		  "  ${3:}",
 			"}",
 			"",
-			"const $1: React.SFC<$1Props> = (props) => {",
-			"  return $0;",
+			"export const ${1:} = (props: I${1:}Props) => {",
+				"  return (",
+				"    <div>",
+				"      ${2:}",
+				"    </div>",
+				"  );",
 			"};",
-			"",
-			"export default $1;"
+			""
 		],
 		"description": "Create a React Stateless Functional Component."
 	},
@@ -167,10 +171,12 @@
 	"render": {
 		"prefix": "ren",
 		"body": [
-			"public render() {",
-			"  return (",
-			"    ${1:}",
-			"  );",
+			"render() {",
+				"  return (",
+				"    <div>",
+				"      ${1:}",
+				"    </div>",
+				"  );",
 			"}"
 		],
 		"description": "When called, it should examine this.props and this.state and return a single React element."
@@ -255,8 +261,8 @@
 	"React redux container": {
 		"prefix": "tscntr",
 		"body": [
-			"import * as React from 'react';",
-			"import { connect } from 'react-redux'",
+			"import * as React from \"react\";",
+			"import { connect } from \"react-redux\"",
 			"",
 			"export interface ${1:IApp}Props {",
 			"}",
@@ -284,7 +290,7 @@
 	"import": {
 		"prefix": "imt",
 		"body": [
-			"import { $2 } from '$1';"
+			"import { $2 } from \"$1\";"
 		],
 		"description": "Create a import"
 	},
