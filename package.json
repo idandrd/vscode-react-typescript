@@ -1,6 +1,6 @@
 {
   "name": "idandrd-vscode-react-typescript",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Code snippets for react in typescript in Idan's style. Thank @infeng since he wrote it.",
   "displayName": "idandrd / Typescript React code snippets",
   "publisher": "idandrd",
